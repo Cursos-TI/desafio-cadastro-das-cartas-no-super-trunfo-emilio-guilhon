@@ -6,7 +6,7 @@
 
 int main() {
     // Declaração das variáveis(1 para primeira carta, 2 para segunda carta)
-    int pontosturisticos1 = 0, pontosturisticos2 = 0, resultpop = 0, resultarea = 0, resultPIB = 0, resultpontosturisticos = 0, resultdenspop = 0, resultPIBpercap = 0, resultsuperpoder = 0;
+    int pontosturisticos1 = 0, pontosturisticos2 = 0;
     unsigned long int populacao1 = 0, populacao2 = 0;
     float area1 = 0, area2 = 0, PIB1 = 0, PIB2 = 0, densidadepop1 = 0, densidadepop2 = 0, PIBpercapita1 = 0, PIBpercapita2 = 0, superpoder1 = 0, superpoder2 = 0;
     char estado1, estado2, codigo1[5], codigo2[5], nome1[20], nome2[20];
@@ -95,24 +95,15 @@ int main() {
     printf("PIB per capita: %.2f reais\n", PIBpercapita2);
     printf("Super Poder: %.2f \n\n", superpoder2);
 
-    // Cálculo dos resultados das comparações das cartas
-    resultpop = populacao1 > populacao2;
-    resultarea = area1 > area2;
-    resultPIB = PIB1 > PIB2;
-    resultpontosturisticos = pontosturisticos1 > pontosturisticos2;
-    resultdenspop = densidadepop1 < densidadepop2;
-    resultPIBpercap = PIBpercapita1 > PIBpercapita2;
-    resultsuperpoder = superpoder1 > superpoder2;
+    printf("Comparação de cartas(Atributo: Área): \n");
+    printf("Carta 1 - %s: %.2f km²\n", nome1, area1);
+    printf("Carta 2 - %s: %.2f km²\n", nome2, area2);
 
-    // Exibição dos valores das comparações das cartas(1 para verdade, 0 para falso)
-    printf("Comparação das cartas:\n");
-    printf("População: Carta 1 venceu - %d\n",resultpop);
-    printf("Área: Carta 1 venceu - %d\n", resultarea);
-    printf("PIB: Carta 1 venceu - %d\n", resultPIB);
-    printf("Pontos Turísticos: Carta 1 venceu - %d\n", resultpontosturisticos);
-    printf("Densidade Populacional: Carta 1 venceu - %d\n", resultdenspop);
-    printf("PIB per capita: Carta 1 venceu - %d\n",resultPIBpercap);
-    printf("Super Poder: Carta 1 venceu - %d\n", resultsuperpoder);
+    if (area1 > area2){
+        printf("Área da carta 1 é maior - Carta 1 Venceu!\n");
+    } else {
+        printf("Área da carta 2 é maior - Carta 2 Venceu!\n");
+    }
 
     return 0;
 }
